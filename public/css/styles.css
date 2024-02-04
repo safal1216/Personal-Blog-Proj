@@ -11,21 +11,21 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-    background-color: grey;
+    background-color: #79B4B7;
 }
 
 .navbar-brand{
     color: black !important;
     font-weight: bold;
     padding-top: 7%;
-    padding-bottom: -25%;
+    padding-bottom: 25px;
 }
 .navbar-nav  li a{
     color: black !important;
     font-weight: bold; 
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #FCE09B !important;
 }
 
 .contain{
@@ -33,15 +33,25 @@
     height: 100%;
     position: absolute;
     text-align: left;
-    background-color: black;
-    color: white;
+    background-color: #7D6E83;
+    color: #1F2544;
     font-weight: bold;
     font-size: 15px;
     padding-left: 60px;
     padding-top: 30px;}
 
 .contain h1{
-    color: red;
+    color: #E78895;
+}
+
+button{
+    color: black;
+    border-color: blue;
+    background-color: #B71375;
+}
+input{
+    color: black;
+    padding-top: 10px;
 }
 
 .footer-padding {
@@ -49,12 +59,12 @@
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #1abc9c;
+	background-color: #FFD0EC;
 }
 
 .footer p {
