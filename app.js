@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const _ = require('lodash');
 
 const homeStartingContent = "Hi there! I'm Safal, and I'm thrilled to welcome you to my little corner of the internet. our mission is to inspire and empower readers to live their best lives. Through a diverse range of topics including personal growth, wellness, productivity, and creativity, we aim to provide practical advice, thought-provoking insights, and uplifting stories that resonate with our audience. Whether you're seeking tips for self-improvement, motivation to pursue your passions, or simply a dose of positivity, you'll find it here. Our goal is to cultivate a supportive community where individuals can thrive, connect, and embark on their journey towards fulfillment and happiness";
 const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
@@ -49,6 +50,18 @@ app.post("/compose", (req, res)=>{
 
 })
 
+app.get("/posts/:postName", (req, res)=>{
+  const requestedTitle = _.lowerCase(req.params.postName);
+  posts.forEach((post)=>{
+    const storedTitle = _.lowerCase(post.title);
+    if(storedTitle === requestedTitle){
+      res.render("post", {
+        title: post.title,
+        content: post.body
+      })
+    }
+  })
+})
 
 
 
